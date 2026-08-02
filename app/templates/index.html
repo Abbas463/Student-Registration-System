@@ -1,149 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Registration Form</title>
 
     <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-        rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
     />
-</head>
+  </head>
 
-<body style="background:#8fc4b7;">
-
-<div class="container py-5">
-    <div class="row justify-content-center">
+  <body style="background: #8fc4b7">
+    <div class="container py-5">
+      <div class="row justify-content-center">
         <div class="col-lg-8">
+          <div class="card shadow-lg border-0 rounded-4">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+              class="card-img-top"
+              alt="Student Registration"
+            />
 
-            <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-4">Student Registration Form</h2>
 
-                <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
-                    class="card-img-top"
-                    alt="Student Registration"
-                >
+              <form method="POST" action="">
+                {% csrf_token %}
 
-                <div class="card-body p-5">
-
-                    <h2 class="text-center mb-4">
-                        Student Registration Form
-                    </h2>
-
-                    <form method="POST" action="">
-                        {% csrf_token %}
-
-                        <div class="mb-3">
-                            <label class="form-label">Full Name</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                name="name"
-                                required
-                            >
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Email Address</label>
-                            <input
-                                type="email"
-                                class="form-control"
-                                name="email"
-                                required
-                            >
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Date of Birth</label>
-                                <input
-                                    type="date"
-                                    class="form-control"
-                                    name="dob"
-                                    required
-                                >
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Gender</label>
-
-                                <select
-                                    class="form-select"
-                                    name="gender"
-                                    required
-                                >
-                                    <option value="" selected>Select Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
-                                </select>
-
-                            </div>
-
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Class</label>
-
-                            <select
-                                class="form-select"
-                                name="class"
-                                required
-                            >
-                                <option value="" selected>Select Class</option>
-                                <option value="Class 1">Class 1</option>
-                                <option value="Class 2">Class 2</option>
-                                <option value="Class 3">Class 3</option>
-                                <option value="Class 4">Class 4</option>
-                                <option value="Class 5">Class 5</option>
-                            </select>
-
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Registration Code</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                name="reg"
-                                required
-                            >
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label">Admission Test Score</label>
-                            <input
-                                type="number"
-                                class="form-control"
-                                name="test"
-                                min="0"
-                                max="100"
-                                required
-                            >
-                        </div>
-
-                        <div class="d-grid">
-                            <button
-                                type="submit"
-                                class="btn btn-success btn-lg"
-                            >
-                                Register Student
-                            </button>
-                        </div>
-
-                    </form>
-
+                <div class="mb-3">
+                  <label class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    required
+                  />
                 </div>
 
+                <div class="mb-3">
+                  <label class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    required
+                  />
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Date of Birth</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      name="dob"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-md-6 mb-3">
+                    <label class="form-label">Gender</label>
+
+                    <select class="form-select" name="gender" required>
+                      <option value="" selected>Select Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Class</label>
+
+                  <select class="form-select" name="class" required>
+                    <option value="" selected>Select Class</option>
+                    <option value="Class 1">Class 1</option>
+                    <option value="Class 2">Class 2</option>
+                    <option value="Class 3">Class 3</option>
+                    <option value="Class 4">Class 4</option>
+                    <option value="Class 5">Class 5</option>
+                  </select>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Registration Code</label>
+                  <input type="text" class="form-control" name="reg" required />
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label">Admission Test Score</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="test"
+                    min="0"
+                    max="100"
+                    required
+                  />
+                </div>
+
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-success btn-lg">
+                    Register Student
+                  </button>
+                </div>
+              </form>
             </div>
-
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
