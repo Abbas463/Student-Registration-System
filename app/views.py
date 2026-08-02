@@ -12,10 +12,18 @@ def index(request):
         regn=request.POST['reg']
         test=request.POST['test']
 
-        if test > 100:
+        if float(test) > 100:
             return HttpResponse("Test Scores must be less than 100")
+        obj=Student()
+        obj.name=name
+        obj.email=email
+        obj.dob=dob
+        obj.gen=gen
+        obj.stuClass=cla
+        obj.reg=regn
+        obj.test=test
+        obj.save()
 
-        print('name is', name, email, dob, gen, cla, regn, test)
-        return render(request, 'index.html')
+        return HttpResponse("<h1>Data Stored Successfully</h1>")
 
     return render(request, 'index.html')
